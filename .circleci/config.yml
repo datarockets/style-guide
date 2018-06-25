@@ -1,0 +1,32 @@
+version: 2
+
+defaults: &defaults
+  environment:
+    NODE_ENV: development
+  working_directory: ~/project
+  docker:
+    - image: circleci/node:8
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+
+      - run: yarn flow
+
+      - run: yarn lint
+
+      - run: yarn test --runInBand
