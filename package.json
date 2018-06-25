@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "scripts": {
+    "flow": "flow",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datarockets/linters.git"
+  },
+  "bugs": {
+    "url": "https://github.com/datarockets/linters/issues"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.75.0",
+    "jest": "^23.1.0",
+    "jest-flow-transform": "^1.0.1",
+    "lerna": "^2.11.0",
+    "lodash": "^4.17.10",
+    "stylelint": "^9.3.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.js$": "jest-flow-transform"
+    },
+    "testPathIgnorePatterns": [
+      "__tests__/runTest.js"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "stylelint-config-datarockets",
+  "description": "Shareable stylelint config for datarocket's projects",
+  "main": "index.js",
+  "peerDependencies": {
+    "stylelint": "^9.3.0",
+    "stylelint-config-standard": "^18.2.0"
+  }
+}
