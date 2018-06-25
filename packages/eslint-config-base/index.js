@@ -1,67 +1,41 @@
 // @flow
 
 module.exports = {
-  extends: [
-    'stylelint-config-standard',
-  ],
-  rules: {
-    "at-rule-no-unknown": [true, {
-      "ignoreAtRules": [
-        "define-mixin",
-        "mixin",
-      ],
-    }],
-    "at-rule-no-vendor-prefix": true,
-    "color-named": "never",
-    "color-no-invalid-hex": true,
-    "declaration-no-important": true,
-    "font-family-name-quotes": "always-where-recommended",
-    "font-weight-notation": "named-where-possible",
-    "function-url-quotes": ["always", {
-      "except": [
-        "empty"
-      ]
-    }],
-    "indentation": 4,
-    "max-nesting-depth": 3,
-    "media-feature-name-no-vendor-prefix": true,
-    "property-no-vendor-prefix": true,
-    "selector-attribute-quotes": "always",
-    "selector-no-vendor-prefix": true,
-    "selector-max-compound-selectors": 4,
-    "selector-max-specificity": "1,3,2",
-    "selector-pseudo-class-no-unknown": [true, {
-      "ignorePseudoClasses": [
-        "global",
-        "local",
-      ]
-    }],
-    "string-quotes": "single",
-    "value-no-vendor-prefix": true,
+  parser: 'babel-eslint',
 
-    // UNITS
-    "declaration-property-unit-blacklist": {
-      "/^(border(?!-radius))/": [
-        "rem",
-        "em",
-        "%",
-      ],
-      "/^[^-]{2}?.+/": [
-        "px",
-      ],
-    },
-    "unit-whitelist": [
-      "px",
-      "vh",
-      "vw",
-      "vmin",
-      "vmax",
-      "rem",
-      "em",
-      "%",
-      "s",
-      "ms",
-      "deg",
+  extends: [
+    'airbnb-base',
+  ],
+
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    jest: true,
+  },
+
+  rules: {
+    'class-methods-use-this': 'off',
+    'func-names': 'off',
+    'import/extensions': ['error', 'never', {
+      css: 'always',
+    }],
+    'import/prefer-default-export': 'off',
+    indent: ['error', 2],
+    'no-param-reassign': 'off',
+    'no-underscore-dangle': 'off',
+    'no-multiple-empty-lines': [
+      'error', {
+        max: 1,
+        maxBOF: 0,
+        maxEOF: 0,
+      },
     ],
+    'padded-blocks': ['error', {
+      blocks: 'never',
+      classes: 'never',
+      switches: 'never',
+    }],
+    semi: ['error', 'never'],
   },
 }

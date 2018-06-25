@@ -14,7 +14,7 @@
     "react"
   ],
   "dependencies": {
-    "eslint-config-datarockets-base": "^0"
+    "eslint-config-datarockets-base": "latest"
   },
   "peerDependencies": {
     "babel-eslint": "^8.2.5",

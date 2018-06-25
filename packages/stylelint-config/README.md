@@ -1,6 +1,6 @@
 # stylelint-config-datarockets
 
-[![npm version][npm version badge]](https://www.npmjs.com/package/stylelint-config-datarockets)
+[![npm version](https://img.shields.io/npm/v/stylelint-config-datarockets.svg)](https://www.npmjs.com/package/stylelint-config-datarockets)
 
 Shareable stylelint config for datarocket's projects.
 
@@ -27,5 +27,3 @@ Shareable stylelint config for datarocket's projects.
    ```
 
 2. Add `extends: "datarockets"` to your stylelintrc file.
-
-[npm version badge]: https://img.shields.io/npm/v/stylelint-config-datarockets.svg

@@ -2,16 +2,14 @@
   "private": true,
   "scripts": {
     "flow": "flow",
+    "lint": "eslint ./packages ./__tests__",
     "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/datarockets/linters.git"
-  },
-  "bugs": {
-    "url": "https://github.com/datarockets/linters/issues"
-  },
   "devDependencies": {
+    "babel-eslint": "^8.2.5",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
     "flow-bin": "^0.75.0",
     "jest": "^23.1.0",
     "jest-flow-transform": "^1.0.1",
@@ -19,6 +17,9 @@
     "lodash": "^4.17.10",
     "stylelint": "^9.3.0",
     "stylelint-config-standard": "^18.2.0"
+  },
+  "eslintConfig": {
+    "extends": ["./packages/eslint-config-base/index.js"]
   },
   "jest": {
     "testEnvironment": "node",

@@ -27,14 +27,15 @@ type StylelintResult = {
   }>,
 }
 
-const sanitizeCase = (string: Case): Case =>
-  `${string.trim()}\n`
+const sanitizeCase = (string: Case): Case => `${string.trim()}\n`
 
-const normalizeCases = (input: CaseList | Case): CaseList =>
+const normalizeCases = (input: CaseList | Case): CaseList => (
   Array.isArray(input) ? input.map(sanitizeCase) : [sanitizeCase(input)]
+)
 
-const lintCases = (cases: CaseList): Promise<Array<StylelintResult>> =>
+const lintCases = (cases: CaseList): Promise<Array<StylelintResult>> => (
   Promise.all(cases.map(code => stylelint.lint({ code, config })))
+)
 
 const runTest = (configuration: Configuration) => {
   const ruleName = (configuration.filename || '').replace(/.+\/([a-z-]+)\.js$/, '$1')
@@ -46,7 +47,7 @@ const runTest = (configuration: Configuration) => {
     const report = (result: StylelintResult) => {
       const source = result.results[0]._postcssResult.css.trimRight()
       const message = result.results[0].warnings.map(i => i.text).join('\n\t')
-      const error = 'Source:\n\t' + source + '\n\nMessage:\n\t' + message
+      const error = `Source:\n\t${source}\n\nMessage:\n\t${message}`
 
       reports.push(error)
     }
@@ -60,7 +61,7 @@ const runTest = (configuration: Configuration) => {
       }
     })
 
-    if (Boolean(configuration.valid))
+    if (configuration.valid) {
       describe('valid', () => {
         const cases = normalizeCases(configuration.valid)
 
@@ -74,8 +75,9 @@ const runTest = (configuration: Configuration) => {
           })
         })
       })
+    }
 
-    if (Boolean(configuration.invalid))
+    if (configuration.invalid) {
       describe('invalid', () => {
         const cases = normalizeCases(configuration.invalid)
 
@@ -89,7 +91,7 @@ const runTest = (configuration: Configuration) => {
           })
         })
 
-        if (ruleName)
+        if (ruleName) {
           test('appropriate rule name', async () => {
             const results = await lintCases(cases)
 
@@ -99,7 +101,9 @@ const runTest = (configuration: Configuration) => {
               }
             })
           })
+        }
       })
+    }
   })
 }
 

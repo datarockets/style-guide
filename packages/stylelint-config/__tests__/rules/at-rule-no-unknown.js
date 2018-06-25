@@ -6,8 +6,8 @@ runTest({
   filename: __filename,
 
   valid: [
-    `@define-mixin test { color: #abc; }`,
-    `@mixin test;`
+    '@define-mixin test { color: #abc; }',
+    '@mixin test;',
   ],
 
   invalid: [

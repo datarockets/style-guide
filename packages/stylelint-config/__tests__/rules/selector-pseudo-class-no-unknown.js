@@ -6,11 +6,11 @@ runTest({
   filename: __filename,
 
   valid: [
-    `:global(.class) { color: #abc; }`,
-    `:local(.class) { color: #abc; }`,
+    ':global(.class) { color: #abc; }',
+    ':local(.class) { color: #abc; }',
   ],
 
   invalid: [
-    `:test(.class) { color: #abc; }`,
+    ':test(.class) { color: #abc; }',
   ],
 })
