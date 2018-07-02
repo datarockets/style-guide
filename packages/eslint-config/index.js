@@ -7,6 +7,7 @@ module.exports = {
   ],
 
   rules: {
+    'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': ['error', {
       extensions: ['.js'],
     }],

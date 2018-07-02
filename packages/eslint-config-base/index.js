@@ -15,6 +15,7 @@ module.exports = {
   },
 
   rules: {
+    'implicit-arrow-linebreak': 'off',
     'import/prefer-default-export': 'off',
     indent: ['error', 2],
     'lines-between-class-members': 'error',
