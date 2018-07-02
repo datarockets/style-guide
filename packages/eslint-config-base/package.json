@@ -12,10 +12,12 @@
     "styleguide",
     "linter"
   ],
+  "dependencies": {
+    "eslint-config-airbnb-base": "^13.0.0"
+  },
   "peerDependencies": {
     "babel-eslint": "^8.2.5",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0"
   },
   "version": "0.0.4-5"
