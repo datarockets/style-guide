@@ -15,15 +15,9 @@ module.exports = {
   },
 
   rules: {
-    'class-methods-use-this': 'off',
-    'func-names': 'off',
-    'import/extensions': ['error', 'never', {
-      css: 'always',
-    }],
     'import/prefer-default-export': 'off',
     indent: ['error', 2],
-    'no-param-reassign': 'off',
-    'no-underscore-dangle': 'off',
+    'lines-between-class-members': 'error',
     'no-multiple-empty-lines': [
       'error', {
         max: 1,
@@ -31,11 +25,25 @@ module.exports = {
         maxEOF: 0,
       },
     ],
+    'no-undef': 'error',
     'padded-blocks': ['error', {
       blocks: 'never',
       classes: 'never',
       switches: 'never',
     }],
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: '*', next: 'return' },
+
+      { blankLine: 'always', prev: '*', next: 'if' },
+      { blankLine: 'always', prev: 'if', next: '*' },
+
+      { blankLine: 'always', prev: '*', next: 'export' },
+
+      { blankLine: 'always', prev: '*', next: 'class' },
+
+      { blankLine: 'always', prev: '*', next: 'default' },
+    ],
     semi: ['error', 'never'],
   },
 }

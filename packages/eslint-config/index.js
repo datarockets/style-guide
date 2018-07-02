@@ -7,8 +7,9 @@ module.exports = {
   ],
 
   rules: {
-    'react/jsx-filename-extension': 'off',
-    'react/jsx-wrap-multilines': 'error',
+    'react/jsx-filename-extension': ['error', {
+      extensions: ['.js'],
+    }],
     'react/sort-comp': ['error', {
       order: [
         'static-methods',

@@ -22,7 +22,7 @@ module.exports = {
         'empty',
       ],
     }],
-    indentation: 4,
+    indentation: 2,
     'max-nesting-depth': 3,
     'media-feature-name-no-vendor-prefix': true,
     'property-no-vendor-prefix': true,
@@ -48,6 +48,11 @@ module.exports = {
       ],
       '/^[^-]{2}?.+/': [
         'px',
+      ],
+    },
+    'declaration-property-unit-whitelist': {
+      'letter-spacing': [
+        'em',
       ],
     },
     'unit-whitelist': [
