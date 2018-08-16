@@ -1,16 +1,16 @@
 // @flow
 
-const runTest = require('../runTest')
+const linter = require('../linter')
 
-runTest({
+linter.verify({
   filename: __filename,
 
   valid: [
-    '@define-mixin test { color: #abc; }',
-    '@mixin test;',
+    ' @define-mixin test { color: #abc; } ',
+    ' @mixin test; ',
   ],
 
   invalid: [
-    '@test test;',
+    ' @test test; ',
   ],
 })
