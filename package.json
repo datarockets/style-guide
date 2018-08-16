@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "flow": "flow",
-    "lint": "eslint ./packages ./__tests__",
+    "lint": "eslint ./packages ./__tests__ --ignore-pattern node_modules",
     "test": "jest"
   },
   "devDependencies": {

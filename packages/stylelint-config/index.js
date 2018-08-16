@@ -53,6 +53,7 @@ module.exports = {
     'declaration-property-unit-whitelist': {
       'letter-spacing': [
         'em',
+        'rem',
       ],
     },
     'unit-whitelist': [

@@ -45,6 +45,7 @@ const runTest = (configuration: Configuration) => {
     let reports: Array<string> = []
 
     const report = (result: StylelintResult) => {
+      // eslint-disable-next-line no-underscore-dangle
       const source = result.results[0]._postcssResult.css.trimRight()
       const message = result.results[0].warnings.map(i => i.text).join('\n\t')
       const error = `Source:\n\t${source}\n\nMessage:\n\t${message}`
