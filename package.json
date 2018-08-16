@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "lerna": "lerna",
     "flow": "flow",
     "lint": "eslint ./packages ./__tests__ --ignore-pattern node_modules",
     "test": "jest"
