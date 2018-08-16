@@ -3,7 +3,7 @@ version: 2
 defaults: &defaults
   environment:
     NODE_ENV: development
-  working_directory: ~/project
+  working_directory: ~/style-guide
   docker:
     - image: circleci/node:8
 
@@ -15,15 +15,15 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
+            - yarn-packages-{{ checksum "yarn.lock" }}
 
       - run: yarn install
+      - run: lerna bootstrap
 
       - save_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - node_modules
+            - ~/.cache/yarn
 
       - run: yarn flow
 
