@@ -26,4 +26,4 @@ Shareable stylelint config for datarocket's projects.
    )
    ```
 
-2. Add `extends: "datarockets"` to your stylelintrc file.
+2. Add `extends: "datarockets"` to your `.stylelintrc` file.

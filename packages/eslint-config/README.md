@@ -28,4 +28,4 @@ It's based on [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascri
   )
   ```
 
-2. Add `extends: "datarockets"` to your eslintrc file.
+2. Add `extends: "datarockets"` to your `.eslintrc` file.
