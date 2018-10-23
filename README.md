@@ -25,7 +25,12 @@ It uses [lerna](https://lernajs.io) to maintain all packages within one reposito
 
 ## Extend the config
 
-
+If you need to upgrade or alter rules in this config, just add the `rules` section to the `.eslintrc` file.
+  ```
+    "rules": {
+      "no-extra-semi": "error"
+    }
+  ```
 
 ### Add file name linter
 
