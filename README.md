@@ -25,8 +25,11 @@ It uses [lerna](https://lernajs.io) to maintain all packages within one reposito
 
 ## Extend the config
 
+
+
 ### Add file name linter
-1. Install `eslint-plugin-filenames`
+
+1. Install `eslint-plugin-filenames` in your project
 
 2. Add a `filename` plugin to the `.eslintrc` file
   ```
@@ -35,7 +38,7 @@ It uses [lerna](https://lernajs.io) to maintain all packages within one reposito
     ]
   ```
 
-3. Update rules
+3. Update the rules section the `.eslintrc` file 
   ```
     "rules": {
       "filenames/match-regex": [2, 'camel', true]
