@@ -23,6 +23,25 @@ Use robust linting like we do
 
 It uses [lerna](https://lernajs.io) to maintain all packages within one repository, so take a look at its features. 
 
+## Extend the config
+
+### Add file name linter
+1. Install `eslint-plugin-filenames`
+
+2. Add a `filename` plugin to the `.eslintrc` file
+  ```
+    "plugins": [
+      "filenames"
+    ]
+  ```
+
+3. Update rules
+  ```
+    "rules": {
+      "filenames/match-regex": [2, 'camel', true]
+    }
+  ```
+
 ## Why all configurations under one version
 
 *Coming soon...*
