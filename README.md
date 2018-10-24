@@ -52,7 +52,7 @@ If you need to upgrade or alter rules in this config, just add the `rules` secti
 
 ### Add React Pug linter
 
-1. Install `eslint-plugin-filenames` in your project
+1. Install `eslint-plugin-react-pug` in your project
 
 2. Add a `react-pug` plugin to the `.eslintrc` file
   ```
