@@ -50,6 +50,34 @@ If you need to upgrade or alter rules in this config, just add the `rules` secti
     }
   ```
 
+### Add React Pug linter
+
+1. Install `eslint-plugin-filenames` in your project
+
+2. Add a `react-pug` plugin to the `.eslintrc` file
+  ```
+    "plugins": [
+      "react-pug"
+    ]
+  ```
+
+3. Update the `extends` section
+  ```
+    "extends": [
+      "plugin:react-pug/all"
+    ]
+  ```
+
+4. Add the following rules to make linter works with Pug
+  ```
+    "rules": {
+      "react/prefer-stateless-function": "off",
+      "react/prop-types': "off",
+      "react/no-unused-prop-types": "off",
+      "react/no-unused-state": "off",
+    }
+  ```
+
 ## Why all configurations under one version
 
 *Coming soon...*
