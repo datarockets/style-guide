@@ -25,11 +25,93 @@ It uses [lerna](https://lernajs.io) to maintain all packages within one reposito
 
 ## How to install
 
-### Linter for React project
+### Linter for React project `eslint-config-datarockets`
 
-### Linter for Vanilla JavaScript project
+[![npm version](https://img.shields.io/npm/v/eslint-config-datarockets.svg?style=flat-square)](https://www.npmjs.com/package/eslint-config-datarockets)
 
-### Style lint config
+Sharable eslint config for datarocket's projects.
+
+It's based on [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with some specific changes.
+
+1. Installing deps:
+
+  With `npm`:
+
+  ```
+  (
+    export PKG=eslint-config-datarockets;
+    npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
+  )
+  ```
+
+  With `yarn`:
+
+  ```
+  (
+    export PKG=eslint-config-datarockets;
+    npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs yarn add --dev "$PKG@latest"
+  )
+  ```
+
+2. Add `extends: "datarockets"` to your eslintrc file.
+
+### Linter for Vanilla JavaScript project `eslint-config-datarockets-base`
+
+[![npm version](https://img.shields.io/npm/v/eslint-config-datarockets-base.svg?style=flat-square)](https://www.npmjs.com/package/eslint-config-datarockets-base)
+
+Sharable eslint config for datarocket's projects.
+
+It's based on [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with some specific changes.
+
+1. Installing deps:
+
+  With `npm`:
+
+  ```
+  (
+    export PKG=eslint-config-datarockets-base;
+    npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
+  )
+  ```
+
+  With `yarn`:
+
+  ```
+  (
+    export PKG=eslint-config-datarockets-base;
+    npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs yarn add --dev "$PKG@latest"
+  )
+  ```
+
+2. Add `extends: "datarockets-base"` to your eslintrc file.
+
+### Style lint config `stylelint-config-datarockets`
+
+[![npm version](https://img.shields.io/npm/v/stylelint-config-datarockets.svg)](https://www.npmjs.com/package/stylelint-config-datarockets)
+
+Shareable stylelint config for datarocket's projects.
+
+1. Installing deps:
+
+   With `npm`:
+
+   ```
+   (
+     export PKG=stylelint-config-datarockets;
+     npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
+   )
+   ```
+
+   With `yarn`:
+
+   ```
+   (
+     export PKG=stylelint-config-datarockets;
+     npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs yarn add --dev "$PKG@latest"
+   )
+   ```
+
+2. Add `extends: "datarockets"` to your stylelintrc file.
 
 ## Extend the config
 
