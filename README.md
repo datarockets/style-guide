@@ -21,7 +21,15 @@ Use robust linting like we do
 
 ## Contributing
 
-It uses [lerna](https://lernajs.io) to maintain all packages within one repository, so take a look at its features. 
+It uses [lerna](https://lernajs.io) to maintain all packages within one repository, so take a look at its features.
+
+## How to install
+
+### Linter for React project
+
+### Linter for Vanilla JavaScript project
+
+### Style lint config
 
 ## Extend the config
 
