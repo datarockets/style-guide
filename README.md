@@ -27,8 +27,6 @@ It uses [lerna](https://lernajs.io) to maintain all packages within one reposito
 
 ### Linter for React projects `eslint-config-datarockets`
 
-[![npm version](https://img.shields.io/npm/v/eslint-config-datarockets.svg?style=flat-square)](https://www.npmjs.com/package/eslint-config-datarockets)
-
 Sharable eslint config for datarocket's projects.
 
 It's based on [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with some specific changes.
@@ -57,8 +55,6 @@ It's based on [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascri
 
 ### Linter for Vanilla JavaScript projects `eslint-config-datarockets-base`
 
-[![npm version](https://img.shields.io/npm/v/eslint-config-datarockets-base.svg?style=flat-square)](https://www.npmjs.com/package/eslint-config-datarockets-base)
-
 Sharable eslint config for datarocket's projects.
 
 It's based on [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with some specific changes.
@@ -86,8 +82,6 @@ It's based on [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascri
 2. Add `extends: "datarockets-base"` to your `.eslintrc` file.
 
 ### Style lint config `stylelint-config-datarockets`
-
-[![npm version](https://img.shields.io/npm/v/stylelint-config-datarockets.svg)](https://www.npmjs.com/package/stylelint-config-datarockets)
 
 Shareable stylelint config for datarocket's projects.
 
