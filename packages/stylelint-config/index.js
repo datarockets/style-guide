@@ -41,7 +41,7 @@ module.exports = {
 
     // UNITS
     'declaration-property-unit-blacklist': {
-      '/^(border(?!-radius))/': [
+      '/^(border(?!(-\\w+)*-radius))/': [
         'rem',
         'em',
         '%',

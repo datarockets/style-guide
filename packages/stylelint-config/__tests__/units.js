@@ -8,6 +8,12 @@ linter.verify({
   valid: [
     ' border-width: 1px; ',
     ' border: 1px; ',
+    ' border-radius: 1rem; ',
+    ' border-radius: 1em; ',
+    ' border-radius: 1%; ',
+    ' border-top-left-radius: 1rem; ',
+    ' border-top-left-radius: 1em; ',
+    ' border-top-left-radius: 1%; ',
     ' transform: translate(10rem, 10%) rotate(10deg) scale(0.5, 2); ',
     ' letter-spacing: 1rem; ',
     ' letter-spacing: 1em; ',
@@ -26,6 +32,7 @@ linter.verify({
     ' border-width: 1%; ',
     ' border: 1%; ',
     ' border-radius: 1px; ',
+    ' border-top-left-radius: 1px; ',
 
     ' transform: translate(10rem, 10px); ',
     ' letter-spacing: 1px; ',
