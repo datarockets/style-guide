@@ -13,7 +13,7 @@
     "linter"
   ],
   "peerDependencies": {
-    "stylelint": "^9.10.1",
+    "stylelint": "^13.8",
     "stylelint-config-standard": "^18.2.0"
   },
   "version": "0.0.4-6"
