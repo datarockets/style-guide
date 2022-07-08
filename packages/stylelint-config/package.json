@@ -14,7 +14,7 @@
   ],
   "peerDependencies": {
     "stylelint": "^13.8",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint-config-standard": "^20"
   },
   "version": "0.0.4-6"
 }
