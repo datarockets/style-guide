@@ -20,5 +20,5 @@
     "eslint": "^8",
     "eslint-plugin-import": "^2.16.0"
   },
-  "version": "0.0.4-6"
+  "version": "0.0.4-7"
 }
