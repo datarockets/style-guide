@@ -8,12 +8,12 @@ linter.verify({
   valid: [
     ' @document domain(\'http://www.w3.org/\'); ',
     ' .class { background-image: url(\'x.jpg\'); } ',
-    ' .class { background-image: asset-url(); } ',
+    ' .class { background-image: url(); } ',
   ],
 
   invalid: [
     ' @document domain(http://www.w3.org/); ',
     ' .class { background-image: url(x.jpg); } ',
-    ' .class { background-image: asset-url(\'\'); } ',
+    ' .class { background-image: url(\'\'); } ',
   ],
 })

@@ -18,8 +18,8 @@
     "jest-flow-transform": "^1.0.1",
     "lerna": "^3.13.0",
     "lodash": "^4.17.11",
-    "stylelint": "^9.10.1",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint": "^14.14.0",
+    "stylelint-config-standard": "^29.0.0"
   },
   "eslintConfig": {
     "extends": [
