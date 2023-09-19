@@ -10,7 +10,7 @@ const eslintRunner = new CLIEngine({
   useEslintrc: false,
 })
 
-const lintCase = (oneCase) => {
+const lintCase = (oneCase: string) => {
   const report = eslintRunner.executeOnText(oneCase)
 
   if (report.errorCount > 0) {
@@ -35,6 +35,8 @@ const lintCase = (oneCase) => {
   }
 }
 
-module.exports = new RunLinter({
+const runLinter: RunLinter = new RunLinter({
   lintCases: cases => Promise.all(cases.map(lintCase)),
 })
+
+module.exports = runLinter

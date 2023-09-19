@@ -16,7 +16,7 @@ type Result = {
   results: Array<{
     id: string,
     message: string,
-  }>,
+  }> | Array<empty>,
 }
 
 type Parameters = {
@@ -27,7 +27,7 @@ type Parameters = {
 }
 
 const sanitizeCase = (string: Case): Case => {
-  const trim = input => input.slice(1, -1)
+  const trim = (input: Case) => input.slice(1, -1)
 
   const minIndent = commonPrefix(
     trim(string)
@@ -47,7 +47,7 @@ const normalizeCases = (input: CaseList | Case): CaseList => (
   Array.isArray(input) ? input.map(sanitizeCase) : [sanitizeCase(input)]
 )
 
-const runTest = (configuration: Parameters, lintCases) => {
+const runTest = (configuration: Parameters, lintCases: LintCase) => {
   const ruleName = (configuration.filename || '').replace(/.+\/([a-z-]+)\.js$/, '$1')
   const title = configuration.title || ruleName
 
