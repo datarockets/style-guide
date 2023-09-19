@@ -26,9 +26,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Bootstrap packages
-        run: yarn lerna bootstrap
-
       - name: Flow
         run: yarn flow
 
