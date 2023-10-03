@@ -7,19 +7,21 @@
     "test": "jest"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "@babel/eslint-parser": "^7.22.15",
+    "@babel/preset-flow": "^7.22.15",
+    "@babel/preset-react": "^7.22.15",
     "chalk": "^2.4.2",
     "common-prefix": "^1.1.0",
-    "eslint": "^5.14.1",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint": "^8",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
     "flow-bin": "^0.93.0",
-    "jest": "^24.1.0",
+    "jest": "^27.5.1",
     "jest-flow-transform": "^1.0.1",
     "lerna": "^3.13.0",
     "lodash": "^4.17.11",
-    "stylelint": "^9.10.1",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0"
   },
   "eslintConfig": {
     "extends": [

@@ -6,14 +6,14 @@ linter.verify({
   filename: __filename,
 
   valid: [
-    ' @document domain(\'http://www.w3.org/\'); ',
+    ' @import url(\'foo.css\'); ',
     ' .class { background-image: url(\'x.jpg\'); } ',
-    ' .class { background-image: asset-url(); } ',
+    ' .class { background-image: url(); } ',
   ],
 
   invalid: [
-    ' @document domain(http://www.w3.org/); ',
+    ' @import url(foo.css); ',
     ' .class { background-image: url(x.jpg); } ',
-    ' .class { background-image: asset-url(\'\'); } ',
+    ' .class { background-image: url(\'\'); } ',
   ],
 })

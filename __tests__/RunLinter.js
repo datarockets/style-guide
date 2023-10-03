@@ -27,19 +27,19 @@ type Parameters = {
 }
 
 const sanitizeCase = (string: Case): Case => {
-  const trim = input => input.slice(1, -1)
+  const trim = (input) => input.slice(1, -1)
 
   const minIndent = commonPrefix(
     trim(string)
       .split('\n')
-      .filter(line => line.trim() !== '')
+      .filter((line) => line.trim() !== '')
       // $FlowFixMe
-      .map(line => /^[ \t]*/.exec(line)[0]),
+      .map((line) => /^[ \t]*/.exec(line)[0]),
   )
 
   return trim(string)
     .split('\n')
-    .map(line => line.substr(minIndent.length))
+    .map((line) => line.substr(minIndent.length))
     .join('\n')
 }
 
@@ -57,11 +57,11 @@ const runTest = (configuration: Parameters, lintCases) => {
     const report = (result: Result) => {
       const example = result.example
         .split('\n')
-        .map(line => `\t${line}`)
+        .map((line) => `\t${line}`)
         .join('\n')
 
       const message = result.errored
-        ? result.results.map(item => `\t* ${item.message}`).join('\n')
+        ? result.results.map((item) => `\t* ${item.message}`).join('\n')
         : '\tShould throw warning'
 
       const error = [

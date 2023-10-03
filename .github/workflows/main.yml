@@ -9,7 +9,7 @@ jobs:
   build:
     strategy:
       matrix:
-        node: [10, 12, 14, 16]
+        node: [16, 18, 20]
 
     runs-on: ubuntu-latest
 

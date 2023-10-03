@@ -40,7 +40,7 @@ module.exports = {
     'value-no-vendor-prefix': true,
 
     // UNITS
-    'declaration-property-unit-blacklist': {
+    'declaration-property-unit-disallowed-list': {
       '/^(border(?!(-\\w+)*-radius))/': [
         'rem',
         'em',
@@ -50,13 +50,13 @@ module.exports = {
         'px',
       ],
     },
-    'declaration-property-unit-whitelist': {
+    'declaration-property-unit-allowed-list': {
       'letter-spacing': [
         'em',
         'rem',
       ],
     },
-    'unit-whitelist': [
+    'unit-allowed-list': [
       'px',
       'vh',
       'vw',

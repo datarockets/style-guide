@@ -13,7 +13,7 @@ const lintCase = async (oneCase) => {
   return {
     errored: result.errored,
     example: oneCase,
-    results: result.results[0].warnings.map(warning => ({
+    results: result.results[0].warnings.map((warning) => ({
       id: warning.rule,
       message: warning.text,
     })),
@@ -21,5 +21,5 @@ const lintCase = async (oneCase) => {
 }
 
 module.exports = new RunLinter({
-  lintCases: cases => Promise.all(cases.map(lintCase)),
+  lintCases: (cases) => Promise.all(cases.map(lintCase)),
 })

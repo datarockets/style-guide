@@ -6,6 +6,13 @@ module.exports = {
     'datarockets-base',
   ],
 
+  parserOptions: {
+    requireConfigFile: false,
+    babelOptions: {
+      presets: ['@babel/preset-react', '@babel/preset-flow'],
+    },
+  },
+
   rules: {
     'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': ['error', {

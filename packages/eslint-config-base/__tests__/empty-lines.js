@@ -35,7 +35,7 @@ linter.verify({
 
       import three from './test3'
 
-      return one + two
+      one + two
     `,
 
     // Class declaration, If, Do/While, Switch, Try
@@ -65,27 +65,29 @@ linter.verify({
     `
       switch ('test') {
       case 'zero':
-        return false
+        false
+        break
 
       case 'one':
       case 'two':
-        return true
+        true
+        break
 
       default:
-        return false
+        false
       }
     `,
 
     // Class
     `
       class MyClass {
-        method() {}
+        methodA() {}
 
-        method() {}
+        methodB() {}
 
-        property = () => {}
+        propertyA = () => {}
 
-        property = () => {}
+        propertyB = () => {}
       }
     `,
   ],
@@ -108,8 +110,8 @@ linter.verify({
 
     // Import
     `
-      import two from './test2'
-      return one + two
+      import two from './test2.js'
+      two()
     `,
 
     // Class declaration, If, Do/While, Switch, Try
@@ -138,23 +140,24 @@ linter.verify({
     `
       switch ('test') {
       case 'asd':
-        return 'one'
+        'one'
+        break
       default:
-        return 'two'
+        'two'
       }
     `,
 
     // Class
     `
       class MyClass {
-        method() {}
-        method() {}
+        methodA() {}
+        methodB() {}
       }
     `,
     `
       class MyClass {
-        property = () => {}
-        property = () => {}
+        propertyA = () => {}
+        propertyB = () => {}
       }
     `,
     `
