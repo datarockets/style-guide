@@ -2,7 +2,6 @@
   "name": "@datarockets/style-guide",
   "version": "0.0.1",
   "description": "Datarockets' style guide",
-  "main": "index.js",
   "homepage": "https://github.com/datarockets/style-guide#readme",
   "bugs": {
     "url": "https://github.com/datarockets/style-guide/issues"
@@ -12,7 +11,19 @@
     "url": "https://github.com/datarockets/style-guide.git"
   },
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "prettier": "./prettier",
+  "dependencies": {
+    "prettier-plugin-packagejson": "^2.4.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.0"
+  },
+  "peerDependencies": {
+    "prettier": ">=3.0.0 <4"
   }
 }
