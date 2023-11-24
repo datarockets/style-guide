@@ -46,7 +46,7 @@ npm link @datarockets/style-guide
 
 Follow [README](./README.md) to find out how to use the configs.
 
-#### Creating a commit
+### Commits
 
 Commit messages should be in the format:
 
@@ -58,3 +58,43 @@ type(scope?): message
 
 The scope should be included most of the time, and all allowed types and scopes
 are documented in [.commitlintrc.js](./.commitlintrc.js).
+
+Commits are used to automatically generate releases (see [Releases](#releases)).
+
+## Releases
+
+The default branch for this repository is `canary`. Each relevant commit into
+`canary` triggers an automated pre-release. Merging `canary` into `main` will
+trigger a release.
+
+We use [semantic-release](https://semantic-release.gitbook.io/semantic-release/)
+to automate releases. It will automatically generate Git tag, create release
+notes based on the commits, publish to npm, etc.
+
+### How commits affect versions
+
+By default, commits with the `feat` type will cause a minor version bump, and
+commits with the `fix` or `perf` type will cause a patch version bump.
+
+If your commit is a breaking change, which will create new major release, you
+should add a footer with `BREAKING CHANGE: [message]`
+
+```
+feat(eslint): migrate to ESLint 8
+
+Resolves #1
+
+BREAKING CHANGE: see the ESLint 8 release notes for all breaking changes
+```
+
+In this example, the release notes would look like this:
+
+> # 1.0.0 (2023-01-01)
+>
+> ### Features
+>
+> - eslint: migrate to ESLint 8 ([commit-hash])
+>
+> ### BREAKING CHANGES
+>
+> - eslint: see the ESLint 8 release notes for all breaking changes

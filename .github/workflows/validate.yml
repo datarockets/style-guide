@@ -1,0 +1,39 @@
+name: Validate
+
+on:
+  push:
+    branches: [main, canary]
+  pull_request:
+    branches: [main, canary]
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set Git fetch depth
+        run: echo "CHECKOUT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> $GITHUB_ENV
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          # We fetch all PR commits to lint them.
+          fetch-depth: ${{ env.CHECKOUT_FETCH_DEPTH }}
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup-environment
+
+      - name: Lint PR commits
+        if: github.event_name == 'pull_request'
+        run: pnpm commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }}
+
+      - name: Validate code format
+        run: pnpm prettier:check
+
+      - name: Lint code
+        run: pnpm lint

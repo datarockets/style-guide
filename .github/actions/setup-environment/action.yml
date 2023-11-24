@@ -1,0 +1,20 @@
+name: Setup Environment
+description: Sets up environment by installing all necessary dependencies.
+
+runs:
+  using: composite
+  steps:
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: pnpm
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm i

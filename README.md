@@ -7,6 +7,7 @@ The following configs are available, and are designed to be used together.
 
 - [Prettier](#prettier)
 - [ESLint](#eslint)
+- [TypeScript](#typescript)
 
 ## Contributing
 

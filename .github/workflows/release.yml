@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  push:
+    branches: [main, canary]
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup-environment
+
+      - name: Release
+        run: pnpm semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
