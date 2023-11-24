@@ -89,6 +89,7 @@ The following additional configs are available:
 - `@datarockets/style-guide/eslint/jest`
 - `@datarockets/style-guide/eslint/jest-react` (includes rules for `@testing-library/react`)
 - `@datarockets/style-guide/eslint/next` (requires `@next/eslint-plugin-next` to be installed at the same version as `next`)
+  - extends `@datarockets/style-guide/eslint/react`
 - `@datarockets/style-guide/eslint/playwright`
 - `@datarockets/style-guide/eslint/react`
 - `@datarockets/style-guide/eslint/storybook`
@@ -113,8 +114,8 @@ module.exports = {
   root: true,
   ignorePatterns: [
     'node_modules/',
-    'public/',
-    'playwright-report/',
+    '/public',
+    '/playwright-report',
     '__screenshots__/',
     // Any other directories which makes sense to ignore to improve ESLint
     // performance. Note: ESLint ignores dot directories (e.g. .git) by default.
@@ -308,9 +309,9 @@ something doesn't work.
 To output ESLint debug logs:
 
 ```sh
-DEBUG=eslint:* npx eslint .
+DEBUG=eslint* npx eslint .
 # For Next.js projects
-DEBUG=eslint:* npx next lint
+DEBUG=eslint* npx next lint
 ```
 
 To show final ESLint config:
