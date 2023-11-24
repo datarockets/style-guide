@@ -320,6 +320,55 @@ To show final ESLint config:
 npx eslint --print-config <some-file>
 ```
 
+## TypeScript
+
+We provide a base config for TypeScript which contains some defaults we usually
+use.
+
+To use it, just extend it in your `tsconfig.json`:
+
+```json
+{
+  "extends": "@datarockets/style-guide/typescript"
+}
+```
+
+The base config isn't intented to be used as a complete one so you might need
+to add more settings in your `tsconfig.json`. For example:
+
+```json
+{
+  "extends": "@datarockets/style-guide/typescript",
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "noEmit": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".storybook/**/*"
+  ],
+  "exclude": ["node_modules"]
+}
+```
+
 ## Acknowledge
 
 Inspired by https://github.com/vercel/style-guide.

@@ -13,12 +13,14 @@
   "license": "MIT",
   "exports": {
     "./eslint/*": "./eslint/configs/*.js",
-    "./prettier": "./prettier/index.js"
+    "./prettier": "./prettier/index.js",
+    "./typescript": "./typescript/tsconfig.base.json"
   },
   "main": "index.js",
   "files": [
     "eslint",
-    "prettier"
+    "prettier",
+    "typescript"
   ],
   "scripts": {
     "format": "prettier --write .",
