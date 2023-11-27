@@ -22,3 +22,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  sync-canary:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: [release]
+    name: Sync canary with main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: canary
+
+      - name: Back-merge main into canary
+        run: |
+          git merge --ff-only origin/main
+          git push
