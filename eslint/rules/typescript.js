@@ -19,7 +19,7 @@ const disabledImportRules = {
   'import/no-unresolved': 'off',
 };
 
-/* eslint-disable sort-keys */
+/* eslint-disable sort-keys -- We disable this rule to align related properties together. */
 /**
  * These are extended ESLint standard rules by `@typescript-eslint`.
  */
@@ -31,7 +31,6 @@ const extendedStandardRules = {
    */
   'default-param-last': 'off',
   '@typescript-eslint/default-param-last': 'error',
-
   /**
    * Disallow unused variables.
    *
@@ -47,7 +46,7 @@ const extendedStandardRules = {
   'no-useless-constructor': 'off',
   '@typescript-eslint/no-useless-constructor': 'error',
 };
-/* eslint-enable sort-keys */
+/* eslint-enable sort-keys -- enable back */
 
 module.exports = {
   ...disabledImportRules,
