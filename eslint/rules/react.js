@@ -44,6 +44,12 @@ module.exports = {
    */
   'react/jsx-fragments': 'warn',
   /**
+   * Disallows JSX context provider values from taking values that will cause needless rerenders.
+   *
+   * 🚫 Not fixable - https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md
+   */
+  'react/jsx-no-constructed-context-values': 'error',
+  /**
    * Prevent problematic leaked values from being rendered.
    *
    * 🔧 Fixable - https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-leaked-render.md
