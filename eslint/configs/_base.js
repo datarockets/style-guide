@@ -1,5 +1,6 @@
-const standardRules = require('../rules/standard');
+const commentsRules = require('../rules/comments');
 const importRules = require('../rules/import');
+const standardRules = require('../rules/standard');
 const unicornRules = require('../rules/unicorn');
 
 // See: https://github.com/eslint/eslint/issues/3458
@@ -13,6 +14,7 @@ require('@rushstack/eslint-patch/modern-module-resolution');
 module.exports = {
   extends: [
     'eslint:recommended',
+    'plugin:eslint-comments/recommended',
     'plugin:import/recommended',
     'plugin:unicorn/recommended',
     'plugin:prettier/recommended',
@@ -22,6 +24,7 @@ module.exports = {
   reportUnusedDisableDirectives: true,
   rules: {
     ...standardRules,
+    ...commentsRules,
     ...importRules,
     ...unicornRules,
   },
