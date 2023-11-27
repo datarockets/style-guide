@@ -1,0 +1,25 @@
+name: Release `main` branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: I understand that this action will publish everything on canary to the stable version
+        required: true
+        type: boolean
+
+jobs:
+  release:
+    if: ${{ inputs.acknowledge }}
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Merge canary into main
+        run: |
+          git merge --ff-only origin/canary
+          git push
