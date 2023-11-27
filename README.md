@@ -96,6 +96,44 @@ The following additional configs are available:
 - `@datarockets/style-guide/eslint/storybook`
 - `@datarockets/style-guide/eslint/typescript` (requires `typescript` to be installed)
 
+### Plugins
+
+#### Base
+
+- [eslint-plugin-eslint-comments](https://github.com/mysticatea/eslint-plugin-eslint-comments)
+- [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)
+- [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
+- [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
+- [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
+
+#### TypeScript
+
+- [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
+- [eslint-plugin-tsdoc](https://github.com/microsoft/tsdoc)
+
+#### React
+
+- [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
+- [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks)
+- [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+
+#### Next
+
+- [@next/eslint-plugin-next](https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-plugin)
+
+#### Jest
+
+- [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
+- [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library) (React)
+
+#### Playwright
+
+- [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
+
+#### Storybook
+
+- [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook)
+
 ### Examples
 
 > You'll need to use `require.resolve` to provide ESLint with absolute paths,
