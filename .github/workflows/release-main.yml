@@ -19,6 +19,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: main
+          token: ${{ secrets.CI_GITHUB_PAT }}
 
       - name: Merge canary into main
         run: |
