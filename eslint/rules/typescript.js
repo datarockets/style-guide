@@ -5,6 +5,7 @@ const standardRules = require('./standard');
  */
 const disabledTypescriptRules = {
   '@typescript-eslint/no-empty-interface': 'off',
+  '@typescript-eslint/non-nullable-type-assertion-style': 'off',
   '@typescript-eslint/prefer-nullish-coalescing': 'off',
 };
 
