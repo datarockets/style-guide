@@ -1,3 +1,4 @@
+const { TYPESCRIPT_FILES } = require('../constants');
 const reactRules = require('../rules/react');
 const jsxA11yRules = require('../rules/jsx-a11y');
 
@@ -19,4 +20,14 @@ module.exports = {
       version: 'detect',
     },
   },
+  overrides: [
+    {
+      files: TYPESCRIPT_FILES,
+      plugins: ['jsx-expressions'],
+      rules: {
+        'react/jsx-no-leaked-render': 'off',
+        'jsx-expressions/strict-logical-expressions': 'error',
+      },
+    },
+  ],
 };
