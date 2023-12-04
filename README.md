@@ -7,7 +7,7 @@ The following configs are available, and are designed to be used together.
 
 - [Prettier](#prettier)
 - [ESLint](#eslint)
-- [TypeScript](#typescript)
+- [TypeScript](#typescript-1)
 
 ## Contributing
 
@@ -156,6 +156,9 @@ module.exports = {
     '/public',
     '/playwright-report',
     '__screenshots__/',
+    // Specify the needed dot folders via negated pattern to make IDE ESLint
+    // plugin to include it.
+    '!/.storybook',
     // Any other directories which makes sense to ignore to improve ESLint
     // performance. Note: ESLint ignores dot directories (e.g. .git) by default.
   ],
@@ -207,9 +210,6 @@ const nextConfig = {
       // By default, Next.js lints only `app`, `pages`, `components`, `lib`, `src`
       // directories. Here we overwrite it to lint all files in the project.
       '.',
-      // [Optional] By default, ESLint ignores directories started with dot so
-      // we need to specify such directories explicitly.
-      '.storybook',
     ],
   },
 };
@@ -324,6 +324,8 @@ module.exports = {
       'error',
       {
         groups: [
+          // Type imports.
+          ['\\u0000$'],
           // Side effect imports.
           ['^\\u0000'],
           // Node.js builtins prefixed with `node:`.
