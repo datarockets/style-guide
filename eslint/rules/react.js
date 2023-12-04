@@ -78,7 +78,7 @@ module.exports = {
    *
    * 🚫 Not fixable - https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unstable-nested-components.md
    */
-  'react/no-unstable-nested-components': 'error',
+  'react/no-unstable-nested-components': ['error', { allowAsProps: true }],
   /**
    * Disallow closing tags for components without children.
    *
