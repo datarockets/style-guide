@@ -1,3 +1,23 @@
+// https://github.com/lydell/eslint-plugin-simple-import-sort#custom-grouping
+const baseImportOrder = [
+  // Side effect imports.
+  ['^\\u0000'],
+  // Node.js builtins prefixed with `node:`.
+  ['^node:'],
+  // Packages.
+  ['^@?\\w'],
+  // 1. Special aliases (e.g. `@/`, `~/`).
+  // 2. Relative imports.
+  ['^[@~^$#!]/', '^\\.'],
+];
+
+/** Type imports order */
+const typeImportOrder = baseImportOrder.flatMap(group =>
+  group.map(item => `${item}.+\\u0000$`),
+);
+
+const importOrder = [typeImportOrder, ...baseImportOrder];
+
 module.exports = {
   /**
    * Enforce that named type-only specifiers only ever written as part of a
@@ -67,20 +87,5 @@ module.exports = {
    */
   'import/order': 'off',
   'simple-import-sort/exports': 'error',
-  'simple-import-sort/imports': [
-    'error',
-    {
-      groups: [
-        // Side effect imports.
-        ['^\\u0000'],
-        // Node.js builtins prefixed with `node:`.
-        ['^node:'],
-        // Packages.
-        ['^@?\\w'],
-        // 1. Absolute imports and other imports such as Vue-style `@/foo`.
-        // 2. Relative imports.
-        ['^', '^\\.'],
-      ],
-    },
-  ],
+  'simple-import-sort/imports': ['error', { groups: importOrder }],
 };
