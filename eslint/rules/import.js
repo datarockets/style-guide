@@ -1,5 +1,12 @@
 module.exports = {
   /**
+   * Enforce that named type-only specifiers only ever written as part of a
+   * top-level, type-only import; and never with an inline marker.
+   *
+   * 🔧 Fixable - https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/consistent-type-specifier-style.md
+   */
+  'import/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
+  /**
    * Disallow non-import statements appearing before import statements.
    *
    * 🚫 Not fixable - https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/first.md

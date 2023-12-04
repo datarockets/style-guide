@@ -67,8 +67,10 @@ module.exports = {
    *
    * 🔧 Fixable - https://typescript-eslint.io/rules/consistent-type-imports/
    */
-  '@typescript-eslint/consistent-type-imports': 'warn',
-
+  '@typescript-eslint/consistent-type-imports': [
+    'warn',
+    { fixStyle: 'separate-type-imports' },
+  ],
   /**
    * Enforce using a particular method signature syntax.
    *
