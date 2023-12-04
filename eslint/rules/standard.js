@@ -84,11 +84,12 @@ module.exports = {
    */
   'no-extra-label': 'error',
   /**
-   * Make people convert types explicitly e.g. `Boolean(foo)` instead of `!!foo`.
+   * Disallow shorthand type conversions. Allow `!!` shorthand because it works
+   * better than `Boolean` in TypeScript.
    *
    * 🔧 Fixable - https://eslint.org/docs/rules/no-implicit-coercion
    */
-  'no-implicit-coercion': 'warn',
+  'no-implicit-coercion': ['warn', { allow: ['!!'] }],
   /**
    * Disallow use of `eval()`-like methods.
    *
