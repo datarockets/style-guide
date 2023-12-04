@@ -27,6 +27,13 @@ const disabledRules = {
    */
   'unicorn/prefer-module': 'off',
   /**
+   * Prefer `Set#has()` over `Array#includes()` when checking for existence or
+   * non-existence.
+   *
+   * 🔧 Fixable - https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-has.md
+   */
+  'unicorn/prefer-set-has': 'off',
+  /**
    * Prevent abbreviations.
    *
    * 🔧 Fixable - https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md
